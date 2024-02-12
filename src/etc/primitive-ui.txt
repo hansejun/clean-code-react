@@ -1,0 +1,7 @@
+[ 확장성 있는 컴포넌트 이름 작성 ]
+
+- div,span 뿐만 아니라 시맨틱 태그도 적절히 활용
+
+도메인 이름보다는 생김새를 묘사한다. 최대한 Semantic한 Primitive UI를 묘사한다. 
+ ㄴ Box, Circle, List, Square 등 
+ ㄴ Label, Form, Accoridion 등
