@@ -1,0 +1,65 @@
+react directory structure에 정답은 없지만 결국 의존성 덩어리다.
+
+1. 기본적인 컴포넌트를 생성하고 확장하는 형태로 가져간다.
+
+❌ BAD
+components/
+- MyButton.tsx
+- ITable.tsx
+- Icom.tsx
+
+✅ GOOD
+components/
+- BaseButton.tsx
+- BaseTable.tsx
+- BaseIcon.tsx
+
+components/ 
+- AppButton.tsx
+- AppTable.tsx
+- AppIcon.tsx
+
+
+2. 결합도가 높은 경우  prefix로 묶어버린다.
+
+❌ BAD 
+components/
+- TodoList.tsx
+- TodoItem.tsx
+- TodoButton.tsx
+
+components/
+- SearchSidebar.tsx
+- NavigationForSearchSidebar.tsx
+
+✅ GOOD 
+components/
+- TodoList.tsx
+- TodoListItem.tsx
+- TodoListItemButton.tsx 
+
+components/
+- SearchSidebar.tsx 
+- SearchSidebarNavigation.tsx
+
+
+3. 폴더의 Depth가 많을 경우. (1 Depth로 표현)
+
+
+❌ BAD
+components/
+- ClearSearchButton.tsx
+- ExcludeFromSearchInput.tsx
+- LaunchOnStartupCheckbox.tsx
+- SearchInput.tsx
+- TermsCheckbox.tsx 
+
+✅ GOOD (마찬가지로 prefix로 묶으면 1Depth로 관리할 수 있다.) - 구조가 안정화되면 그 때 분리시켜도된다. 
+components/
+- SearchButtonClear.tsx
+- SearchButtonRun.tsx
+- SearchInputQuery.tsx
+- SearchInputExcludeGlob.tsx
+- SettingsCheckboxTerms.tsx 
+- SettingsCheckboxLaunchOnStartup.tsx 
+
